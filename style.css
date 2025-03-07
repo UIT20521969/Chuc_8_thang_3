@@ -15,8 +15,8 @@ html, body {
 /* 🎀 Canvas trái tim */
 canvas {
     position: absolute;
-    width: 170%;
-    height: 170%;
+    width: 100%;
+    height: 100%;
     z-index: 5;
     pointer-events: none;
 }
@@ -161,7 +161,7 @@ canvas {
 /* 🌸 RESPONSIVE CHO NHIỀU THIẾT BỊ 🌸 */
 
 /* Điện thoại (dưới 480px) */
-@media (max-width: 480px) {
+@media (max-width: 280px) {
     .flash-cards {
         flex-direction: column;
         align-items: center;
