@@ -22,13 +22,18 @@ canvas {
 }
 /* 🌸 Chứa Tiêu đề + Nút Nhạc */
 .title-container {
+    position: fixed;  /* Luôn hiển thị dù cuộn trang */
+    top: 0;           /* Cố định ở đầu trang */
+    left: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 100%;
-    max-width: 500px;
-    flex-wrap: wrap; /* Đảm bảo không mất trên điện thoại */
+    padding: 10px 0;
+    background: rgba(255, 64, 129, 0.9); /* Nền hồng trong suốt nhẹ */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng */
+    z-index: 1000; /* Đảm bảo luôn hiển thị trên tất cả nội dung */
 }
 
 /* 💖 Card Tiêu đề */
