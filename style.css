@@ -119,6 +119,23 @@ canvas {
     transform: scale(1.2);
 }
 
+/* 🎵 Nút chơi nhạc */
+#music-btn {
+    background: #ff4081;
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🌟 Hiệu ứng khi nhấn vào */
+#music-btn:active {
+    transform: scale(0.9);
+}
+
 /* ========================= */
 /* 🌸 RESPONSIVE CHO NHIỀU THIẾT BỊ 🌸 */
 /* ========================= */
@@ -142,6 +159,11 @@ canvas {
     .flower {
         width: 60px;
     }
+    
+    #music-btn {
+        font-size: 20px;
+        padding: 8px;
+    }
 }
 
 /* Điện thoại (480px trở xuống) */
@@ -164,6 +186,11 @@ canvas {
 
     .flower {
         width: 50px;
+    }
+
+    #music-btn {
+        font-size: 18px;
+        padding: 6px;
     }
 }
 

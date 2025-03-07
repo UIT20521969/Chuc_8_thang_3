@@ -3,11 +3,11 @@
  */
 var settings = {
     particles: {
-        length: 900, // maximum amount of particles
-        duration: 5, // particle duration in sec
-        velocity: 100, // particle velocity in pixels/sec
-        effect: -0.5000, // play with this for a nice effect
-        size: 10, // particle size in pixels
+        length: 1900, // maximum amount of particles
+        duration: 7, // particle duration in sec
+        velocity: 15, // particle velocity in pixels/sec
+        effect: 0.5000, // play with this for a nice effect
+        size: 5, // particle size in pixels
     },
 };
 
@@ -260,3 +260,47 @@ function createHeart() {
 // Tạo trái tim liên tục mỗi 300ms
 setInterval(createHeart, 300);
 
+let isPlaying = false;
+const music = document.getElementById("background-music");
+const musicBtn = document.getElementById("music-btn");
+
+// ✅ Kiểm tra nếu trình duyệt chặn tự động phát
+function tryAutoPlay() {
+    music.volume = 0.5; // Giảm âm lượng để không quá lớn
+
+    let playPromise = music.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                isPlaying = true;
+                musicBtn.innerHTML = "🔊 Pause"; // Đang phát
+            })
+            .catch(() => {
+                console.log("Tự động phát bị chặn. Chờ người dùng tương tác.");
+                document.addEventListener("click", enableMusicOnClick, { once: true });
+            });
+    }
+}
+
+// ✅ Phát nhạc khi người dùng nhấp lần đầu
+function enableMusicOnClick() {
+    music.play();
+    isPlaying = true;
+    musicBtn.innerHTML = "🔊 Pause"; // Đang phát
+}
+
+// ✅ Bật/Tắt nhạc khi nhấn nút
+function toggleMusic() {
+    if (isPlaying) {
+        music.pause();
+        musicBtn.innerHTML = "🎵 Play";
+    } else {
+        music.play();
+        musicBtn.innerHTML = "🔊 Pause"; // Đang phát
+    }
+    isPlaying = !isPlaying;
+}
+
+// ✅ Chạy thử tự động phát khi trang tải
+window.addEventListener("DOMContentLoaded", tryAutoPlay);

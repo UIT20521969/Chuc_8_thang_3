@@ -9,10 +9,20 @@
 <body>
     <canvas id="pinkboard"></canvas>
 
-    <!-- Card Tiêu đề -->
-    <div class="title-card">
-        <h1>💖 Chúc Mừng 8/3 💖</h1>
+    <!-- Card Tiêu đề + Nút Nhạc -->
+    <div class="title-container">
+        <div class="title-card">
+            <h1>💖 Chúc Mừng 8/3 💖</h1>
+        </div>
+        <button id="music-btn" onclick="toggleMusic()">
+            🎵
+        </button>
     </div>
+
+    <!-- Nhạc nền -->
+    <audio id="background-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- Flash Cards -->
     <div class="flash-cards">
