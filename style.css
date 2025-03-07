@@ -20,20 +20,58 @@ canvas {
     z-index: 5;
     pointer-events: none;
 }
+/* 🌸 Chứa Tiêu đề + Nút Nhạc */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    flex-wrap: wrap; /* Đảm bảo không mất trên điện thoại */
+}
 
 /* 💖 Card Tiêu đề */
 .title-card {
     background: #ff4081;
     color: white;
-    padding: 15px 30px;
+    padding: 15px 5%;
     border-radius: 10px;
     text-align: center;
-    font-size: 24px;
     font-weight: bold;
     box-shadow: 0 5px 15px rgba(255, 0, 100, 0.3);
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 700px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px; /* Giữ tiêu đề không bị ẩn */
+}
+
+/* 📝 Chữ Tiêu đề */
+.title-card h1 {
+    font-size: clamp(16px, 5vw, 32px); /* Tự động điều chỉnh theo màn hình */
+    margin: 0;
+    white-space: nowrap; /* Ngăn chữ bị xuống dòng */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* 🎵 Nút Nhạc */
+#music-btn {
+    background: #ff4081;
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🌟 Hiệu ứng khi nhấn vào */
+#music-btn:active {
+    transform: scale(0.9);
 }
 
 /* 🎴 Flash Cards */
@@ -119,30 +157,13 @@ canvas {
     transform: scale(1.2);
 }
 
-/* 🎵 Nút chơi nhạc */
-#music-btn {
-    background: #ff4081;
-    color: white;
-    font-size: 24px;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* 🌟 Hiệu ứng khi nhấn vào */
-#music-btn:active {
-    transform: scale(0.9);
-}
-
 /* ========================= */
 /* 🌸 RESPONSIVE CHO NHIỀU THIẾT BỊ 🌸 */
 /* ========================= */
 
 /* Tablet (768px trở xuống) */
 @media (max-width: 768px) {
-    .title-card {
+    /* .title-card {
         font-size: 22px;
         padding: 12px 25px;
     }
@@ -163,6 +184,28 @@ canvas {
     #music-btn {
         font-size: 20px;
         padding: 8px;
+    }
+    */
+    .flower {
+        width: 60px;
+    }
+    .title-container {
+        flex-direction: column; /* Chuyển tiêu đề + nút nhạc xuống dưới */
+        gap: 5px;
+    }
+
+    .title-card {
+        padding: 10px 5%;
+        width: 90%;
+    }
+
+    .title-card h1 {
+        font-size: 20px; /* Chữ nhỏ hơn trên điện thoại */
+    }
+
+    #music-btn {
+        font-size: 18px;
+        padding: 6px;
     }
 }
 
